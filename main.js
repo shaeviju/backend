@@ -1,14 +1,28 @@
-import expres, { request, response } from "express";
+import expres from "express";
 
 const app = expres();
 const PORT = 8000;
 
-app.listen(PORT ,()=>{
-    console.log(`The server running on port ${PORT}`);
-    
-})
+// To fetch customer data in bulk
+app.get("/customer", (request, response) => {
+  response.json({ message: `To fetch customer data in bulk` });
+});
 
-app.get('/', (request, response) =>{
-    response.json({"message" : `Working on PORT` })
-})
+// To create customer data
+app.post("/customer", (request, response) => {
+  response.json({ message: `To create customer data` });
+});
 
+// To update customer data
+app.put("/customer/:customerId", (request, response) => {
+  response.json({ message: `To update customer data` });
+});
+
+// To delete customer data
+app.delete("/customer/:customerId", (request, response) => {
+  response.json({ message: ` To delete customer data  ` });
+});
+
+app.listen(PORT, () => {
+  console.log(`The server running on port ${PORT}`);
+});

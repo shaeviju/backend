@@ -13,3 +13,14 @@
 13. git commit -m "Create - routes "   
 14. -> creation of controllers folder
 15. git commit -m "Create - controllers " 
+16. -> creation of database
+17. npm install mongodb
+18. -> creation of lib folder
+19. npm install mongoose --save
+20. -> creation of dbConnection
+21. -> creation of .env file
+22. npm i dotenv
+23. -> creation of .env.example
+
+
+// mongodb+srv://rtcadmin:RdbnWaa6NPn0q1UI@mastercluster.vfenj.mongodb.net/?retryWrites=true&w=majority&appName=MasterCluster

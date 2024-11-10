@@ -10,3 +10,6 @@
 10. git commit -m "Completion of initial file structure"    
 11. git commit -m "Initialing of basic routes"  
 12. -> creation of routes folder
+13. git commit -m "Create - routes "   
+14. -> creation of controllers folder
+15. git commit -m "Create - controllers " 

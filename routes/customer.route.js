@@ -1,25 +1,27 @@
 import expres from "express";
+import {
+  createCustomerData,
+  deleteCustomerData,
+  getBulkCustomerData,
+  getSingleCustomerData,
+  updateCustomerData,
+} from "../controllers/customer.controller.js";
 
-const router = expres.Router()  
+const router = expres.Router();
 
 // To fetch customer data in bulk
-router.get("/customer", (request, response) => {
-  response.json({ message: `To fetch customer data in bulk` });
-});
+router.get("/customer", getBulkCustomerData);
+
+// To fetch single customer data
+router.post("/customer", getSingleCustomerData);
 
 // To create customer data
-router.post("/customer", (request, response) => {
-  response.json({ message: `To create customer data` });
-});
+router.put("/customer/:customerId", createCustomerData);
 
 // To update customer data
-router.put("/customer/:customerId", (request, response) => {
-  response.json({ message: `To update customer data` });
-});
+router.put("/customer/:customerId", updateCustomerData);
 
 // To delete customer data
-router.delete("/customer/:customerId", (request, response) => {
-  response.json({ message: ` To delete customer data  ` });
-});
+router.delete("/customer/:customerId", deleteCustomerData);
 
 export default router;

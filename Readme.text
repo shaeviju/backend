@@ -21,6 +21,5 @@
 21. -> creation of .env file
 22. npm i dotenv
 23. -> creation of .env.example
+24. git commit -m "Create - DB Connection " 
 
-
-// mongodb+srv://rtcadmin:RdbnWaa6NPn0q1UI@mastercluster.vfenj.mongodb.net/?retryWrites=true&w=majority&appName=MasterCluster

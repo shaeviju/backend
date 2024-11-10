@@ -7,4 +7,6 @@
 7. git commit -m " intial commit "  
 8. git push --set-upstream origin master
 9. -> creation of main.js
-10. git commit -m "Completion of initial file structure"     
+10. git commit -m "Completion of initial file structure"    
+11. git commit -m "Initialing of basic routes"  
+12. -> creation of routes folder

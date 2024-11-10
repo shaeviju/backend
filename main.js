@@ -1,27 +1,14 @@
-import expres from "express";
+import express from "express";
+import customerRouter from "./routes/customer.route.js";
 
-const app = expres();
+const app = express();
 const PORT = 8000;
 
-// To fetch customer data in bulk
-app.get("/customer", (request, response) => {
-  response.json({ message: `To fetch customer data in bulk` });
-});
+// Creation of middleware
 
-// To create customer data
-app.post("/customer", (request, response) => {
-  response.json({ message: `To create customer data` });
-});
+app.use('/', customerRouter )
 
-// To update customer data
-app.put("/customer/:customerId", (request, response) => {
-  response.json({ message: `To update customer data` });
-});
 
-// To delete customer data
-app.delete("/customer/:customerId", (request, response) => {
-  response.json({ message: ` To delete customer data  ` });
-});
 
 app.listen(PORT, () => {
   console.log(`The server running on port ${PORT}`);

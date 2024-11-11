@@ -13,10 +13,10 @@ const router = expres.Router();
 router.get("/customer", getBulkCustomerData);
 
 // To fetch single customer data
-router.post("/customer", getSingleCustomerData);
+router.get("/customer", getSingleCustomerData);
 
 // To create customer data
-router.put("/customer/:customerId", createCustomerData);
+router.post("/customer", createCustomerData);
 
 // To update customer data
 router.put("/customer/:customerId", updateCustomerData);

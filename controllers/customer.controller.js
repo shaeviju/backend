@@ -10,7 +10,8 @@ export const getSingleCustomerData = (request, response) => {
 
 // Function for create customer data in bulk
 export const createCustomerData = (request, response) => {
-  response.json({ message: `To create customer data` });
+    // response.json({ message: `To create customer data` });
+    return response.json(request.body);
 };
 
 // Function for update customer data in bulk

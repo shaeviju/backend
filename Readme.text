@@ -22,4 +22,5 @@
 22. npm i dotenv
 23. -> creation of .env.example
 24. git commit -m "Create - DB Connection " 
+25. git commit -m "Error - Rectified " 
 

@@ -7,9 +7,13 @@ const PORT = 8000;
 
 connectDb();
 
+// Data understanding middleware
+app.use(express.json())
+
 // Creation of middleware
 
 app.use('/', customerRouter )
+
 
 
 

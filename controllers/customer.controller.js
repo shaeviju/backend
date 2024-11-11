@@ -2,8 +2,6 @@ import customerModel from "../models/customer.model.js";
 
 // Function for get customer data in bulk
 export const getBulkCustomerData = async (request, response) => {
-  //response.json({ message: `To fetch customer data in bulk` });
-
   try {
     const customerBulk = await customerModel.find();
     response.json(customerBulk);
@@ -12,17 +10,26 @@ export const getBulkCustomerData = async (request, response) => {
   }
 };
 
-// Function for get Single customer data in bulk
-export const getSingleCustomerData = (request, response) => {
-  response.json({ message: `To fetch customer data in single` });
+// Function for get Single customer data
+export const getSingleCustomerData = async (request, response) => {
+  try {
+    const customer = await customerModel.findById(request.params.customerId); //  ==  _id
+    if (customer == null) {
+      return response.status(404).json({ message: "Cannot find customer" });
+    } else {
+      response.json(customer);
+    }
+  } catch (error) {
+    return response.status(500).json({ message: error.message });
+  }
 };
 
-// Function for create customer data in bulk
+// Function for create customer data
 export const createCustomerData = async (request, response) => {
-  // To pass data to db
   const newCustomer = new customerModel({
     customerId: request.body.customerId,
     customerName: request.body.customerName,
+    // Add additional fields as needed from the request body
   });
 
   try {
@@ -31,19 +38,38 @@ export const createCustomerData = async (request, response) => {
   } catch (error) {
     return response.status(400).json({ message: error.message });
   }
-
-  // response.json({ message: `To create customer data` });
-  // return response.json(request.body);
 };
 
-// Function for update customer data in bulk
-export const updateCustomerData = (request, response) => {
-  response.json({ message: `To update customer data` });
+// Function for update customer data
+export const updateCustomerData = async (request, response) => {
+  try {
+    const customerUpdate = await customerModel.findByIdAndUpdate(
+      request.params.customerId,  //  ==  _id
+      request.body,
+      { new: true }
+    );
+    if (customerUpdate == null) {
+      return response.status(404).json({ message: "Cannot find customer" });
+    } else {
+      response.json(customerUpdate);
+    }
+  } catch (error) {
+    return response.status(500).json({ message: error.message });
+  }
 };
 
 
 
-// Function for delete customer data in bulk
-export const deleteCustomerData = (request, response) => {
-  response.json({ message: `To delete customer data` });
+// Function for delete customer data
+export const deleteCustomerData = async (request, response) => {
+  try {
+    const deleteCustomer = await customerModel.findByIdAndDelete(request.params.customerId);  //  ==  _id
+    if (deleteCustomer == null) {
+      return response.status(404).json({ message: "Cannot find customer" });
+    } else {
+      response.json({ message: "Customer deleted successfully" });
+    }
+  } catch (error) {
+    response.status(500).json({ message: error.message });
+  }
 };

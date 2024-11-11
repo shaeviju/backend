@@ -1,4 +1,4 @@
-import expres from "express";
+import express from "express";
 import {
   createCustomerData,
   deleteCustomerData,
@@ -7,13 +7,13 @@ import {
   updateCustomerData,
 } from "../controllers/customer.controller.js";
 
-const router = expres.Router();
+const router = express.Router();
 
 // To fetch customer data in bulk
 router.get("/customer", getBulkCustomerData);
 
 // To fetch single customer data
-router.get("/customer", getSingleCustomerData);
+router.get("/customer/:customerId", getSingleCustomerData);
 
 // To create customer data
 router.post("/customer", createCustomerData);

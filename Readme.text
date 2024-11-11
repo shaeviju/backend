@@ -25,4 +25,5 @@
 25. git commit -m "Error - Rectified " 
 26. -> creation of models folder
 27. git commit -m "Create - Create Customer API "  
+28. git commit -m "Create - Get Bulk Customer API " 
 

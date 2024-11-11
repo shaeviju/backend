@@ -23,4 +23,6 @@
 23. -> creation of .env.example
 24. git commit -m "Create - DB Connection " 
 25. git commit -m "Error - Rectified " 
+26. -> creation of models folder
+27. git commit -m "Create - Create Customer API "  
 
